@@ -49,8 +49,8 @@ The default is ``.
 name: tfsec
 on: [pull_request]
 jobs:
-  tflint:
-    name: runner / tflint
+  tfsec:
+    name: runner / tfsec
     runs-on: ubuntu-latest
 
     steps:
