@@ -56,21 +56,6 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@master
-        with:
-          fetch-depth: 1
-
-      # Install latest Terraform manually as
-      #  Docker-based GitHub Actions are
-      #  slow due to lack of caching
-      - name: Install Terraform
-        run: |
-          curl -LO https://raw.github.com/robertpeteuil/terraform-installer/master/terraform-install.sh
-          chmod +x terraform-install.sh
-          ./terraform-install.sh -a
-
-      - name: Terraform init
-        run: |
-          terraform init
 
       - name: tfsec
         uses: reviewdog/action-tfsec@master
